@@ -225,7 +225,7 @@ body{
         }
        
     }
-    .peliculasTendencia{
+    .peliculasTendencia,.mostrarPorAño{
         width:80%;
         margin: 0 auto;
         text-align: center;
@@ -462,7 +462,7 @@ body{
         }
     }
 }
-
+/* Seccion Peliculas por Año*/
 .peliculasPorAño{
     width:80%;
     margin: 0 auto;
@@ -501,7 +501,7 @@ body{
                 
         }
        
-    }
+    } /* al posisionarse sobre el año*/
     .añoItem:hover{
         transform: scale(1.1);
         transition: 0.5s;
@@ -513,7 +513,13 @@ body{
     }
 }
 
+/*ESTILOS PARA SECCION PELICULAR POR AÑO MOBILE Y TABLET*/
 
+@media (max-width: 768px) {
+    .peliculasPorAño{
+        .peliculaAño{
+            grid-template-columns: repeat(3,1fr);}
+}}
 
 /*ESTILOS ESCRITORIO FOOTER*/
 .footer{
@@ -531,7 +537,6 @@ body{
             margin-left:20px;
             .linkNav{
                 text-decoration: none;
-                
                 color:#ffffff;
                 font-weight: 700;
                 font-size: 1.2rem;
