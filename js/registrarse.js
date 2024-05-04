@@ -51,6 +51,7 @@ const validarFormulario = (event) => {
 
     if(validation){
         formRegister.submit()
+        alert("Felicitaciones, te has registrado correctamente¡¡¡")
     }else{
         return false;
     }
