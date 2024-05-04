@@ -20,20 +20,24 @@
     </header>
     <main  id="main" class="main">
       <section  data-aos="zoom-in"  data-aos-duration="1000" class="seccionRegistrarse">
-        <form  action="" method="post">
+        <form  action="" id="formRegister" method="GET" novalidate>
             <h2 class="tituloRegistrarse">Registro</h2>
-            <div>
+            <div class="form-control">
                 <input type="text" placeholder="Nombre" required id="nombre" name="nombre">
             </div>
-            <div>
+            <div class="error" id="error-Nombre"></div>
+            <div class="form-control">
                 <input type="text" placeholder="Apellido" required id="apellido" name="apellido">
             </div>
-            <div>
+            <div class="error" id="error-Apellido"></div>
+            <div class="form-control">
                 <input type="email" placeholder="Email" required id="email" name="email">
             </div>
-            <div>
+            <div class="error" id="error-Email"></div>
+            <div class="form-control">
                 <input type="password" placeholder="Contraseña" required id="password" name="password">
             </div>
+            <div class="error" id="error-Contraseña"></div>
             <div>
                 <input type="date" placeholder="Fecha de Nacimiento (dd/mm/aaaa)" required id="fechaNacimiento" name="fechaNacimiento">
             </div>
@@ -68,6 +72,7 @@
 
     </main>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="../js/registrarse.js"></script>
     <script>
     AOS.init();
     </script>

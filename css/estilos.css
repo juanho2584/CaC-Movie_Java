@@ -621,7 +621,7 @@ body{
             flex-direction:column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 110vh;
             font-size:1.2rem;
             .tituloRegistrarse{
                 margin: 5px;
@@ -674,6 +674,15 @@ body{
                     background-color:#862b2b;
                   
                 }
+                .error{
+                    color: red;
+                    margin-bottom: 5px;
+                    font-size: 0.7rem;
+                }
+                .form-control input.error, .form-select.error{
+                    border: 2px solid red; 
+                }
+
                 .ayuda{
                     
                     margin-top:40px;
