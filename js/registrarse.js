@@ -37,18 +37,27 @@ const validarFormulario = (event) => {
         document.querySelector("#error-Email").textContent='Debe completar el campo Email';
         email.classList.add('error')
         validation=false;
+    }else if(email.value != ""){
+        const ValidEmail = /[a-z0-9]+[_a-z0-9\.-]*[a-z0-9]+@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})/ig;
+        const EmailOk = ValidEmail.test(email.value);
+        if (EmailOk === false) {
+            document.querySelector("#error-Email").textContent='Formato de Email incorrecto';
+            contraseña.classList.add('error')
+            validation=false;} 
     }
     if(!contraseña.value.trim()){
         // alert("Los campos Nombre, Apellido, Email y Password son obligatorios")
         document.querySelector("#error-Contraseña").textContent='Debe completar el campo contraseña';
         contraseña.classList.add('error')
         validation=false;
-    }else if(contraseña.value.length < 6 || contraseña.value.length > 12){
-        document.querySelector("#error-Contraseña").textContent ='La contraseña debe contener entre 6 y 12 caracteres';
-        contraseña.classList.add('error')
-        validation=false;
+    }else if(contraseña.value != ""){
+        const ValidClave = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/gm;
+        const EmailOk = ValidClave.test(contraseña.value);
+        if (EmailOk === false) {
+            document.querySelector("#error-Contraseña").textContent='La clave debe contener dos numeros, dos simboles y una letra mayuscula';
+            contraseña.classList.add('error')
+            validation=false;} 
     }
-
     if(validation){
         formRegister.submit()
         alert("Felicitaciones, te has registrado correctamente¡¡¡")
