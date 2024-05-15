@@ -20,29 +20,27 @@
     </header>
     <main  id="main" class="main">
       <section  data-aos="zoom-in"  data-aos-duration="1000" class="seccionRegistrarse">
-        <form  action="" method="post">
+        <form  action="" id="formsesion" method="get" novalidate>
             <h2 class="tituloRegistrarse">Iniciar Sesión</h2>
-         
-            <div>
+            <div class="form-control">
                 <input type="email" placeholder="Email" required id="email" name="email">
             </div>
-            <div>
+            <div class="error" id="error-Email"></div>
+            <div class="form-control">
                 <input type="password" placeholder="Contraseña" required id="password" name="password">
             </div>
-          
-          
+            <div class="error" id="error-Contraseña"></div>
             <div>
                 <input  class="boton" type="submit" value="Iniciar Sesión">
             </div>
-           
             <div > 
-               
                 <a id="ayuda" class="ayuda" href="registrarse.html">Registrarse</a>
             </div>
         </form>
       </section>
 
     </main>
+    <script src="../js/iniciosesion.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
     AOS.init();
