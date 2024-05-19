@@ -4,7 +4,7 @@ const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
-    Authorization: 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI3NjI1MDNjNjg4MzU4MGM4NmYxNTNjMzhhOTNkYjE3NyIsInN1YiI6IjY2NDY2MzRiNjBmZTQ0ZjgwNjk2NmViZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Uh3kUGIY7JzvT7_uCrknoq43dZezBJhZl2CaxpWErNI'
+    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzMWZkMTY4NjcxMjM5YmEzYWI3MzQ0YzY1ZjU2NzJiMSIsInN1YiI6IjY2NDY2MzRiNjBmZTQ0ZjgwNjk2NmViZCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.oDPXYNHJwAUFNhuDsHrrCtz0tNjZKvtNO1Zjh1NKn1o'
   }
 };
 
@@ -26,11 +26,34 @@ fetch(`${URLSERVER}/movie/popular`, options)
   .then(response => {
           console.log(response)
           let movies = response.results;
-          let divTopRated = document.getElementById('list-popular');
+          let divPopular= document.getElementById('list-popular');
           for (let i = 0; i < 12; i++) {
             let html = renderPopular(movies[i]);
-            divTopRated.insertAdjacentHTML('beforeend',html)
+            divPopular.insertAdjacentHTML('beforeend',html)
           }
         }
       )
   .catch(err => console.error(err));
+
+
+  const renderTopRated = (movie) => {
+    let html = `<div class="peliculaItem">
+                    <img class="imgAclamada" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="aclamada_1" loading="lazy">
+                </div>
+                `
+    return html;
+  }
+  
+  fetch(`${URLSERVER}/movie/top_rated`, options)
+    .then(response => response.json())
+    .then(response => {
+            console.log(response)
+            let movies = response.results;
+            let divTopRated = document.getElementById('list-top-rated');
+            movies.forEach(movie => {
+              let html = renderTopRated(movie);
+              divTopRated.insertAdjacentHTML('beforeend',html)
+            });
+          }
+        )
+    .catch(err => console.error(err));
