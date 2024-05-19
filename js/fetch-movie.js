@@ -38,7 +38,7 @@ fetch(`${URLSERVER}/movie/popular`, options)
 
   const renderTopRated = (movie) => {
     let html = `<div class="peliculaItem">
-                    <img class="imgAclamada" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="aclamada_1" loading="lazy">
+                    <img class="imgAclamada" src="https://image.tmdb.org/t/p/w500/${movie.poster_path}" alt="${movie.title}" loading="lazy">
                 </div>
                 `
     return html;
