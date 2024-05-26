@@ -77,12 +77,9 @@ const validarFormulario = (event) => {
         validation=false;
     }
 
-
-
-
     if(validation){
         formRegister.submit()
-        alert("Felicitaciones, te has registrado correctamente¡¡¡")
+        alert("Felicitaciones "+ nombre.value .toUpperCase()+ " "+ apellido.value.toUpperCase() + " tu registro ha sido exitoso!!!")
     }else{
         return false;
     }
