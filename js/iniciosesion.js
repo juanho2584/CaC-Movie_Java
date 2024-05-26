@@ -43,7 +43,7 @@ const validarSesion = (event) => {
     }
     if(validation){
         formsesion.submit()
-        alert("Felicitaciones, te has registrado correctamente¡¡¡")
+        alert("Bienvenido " + email.value);
     }else{
         return false;
     }

@@ -5,10 +5,14 @@ const clearValidations = () => {
     document.querySelector("#apellido").classList.remove('error');
     document.querySelector("#email").classList.remove('error');
     document.querySelector("#password").classList.remove('error');
+    document.querySelector("#pais").classList.remove('error');
+    document.querySelector("#fechaNacimiento").classList.remove('error');
     document.querySelector("#error-Nombre").textContent='';
     document.querySelector("#error-Apellido").textContent='';
     document.querySelector("#error-Email").textContent='';
     document.querySelector("#error-Contraseña").textContent='';
+    document.querySelector("#error-Pais").textContent='';
+    document.querySelector("#error-FechaNacimiento").textContent='';
     
 }
 const validarFormulario = (event) => {
@@ -19,6 +23,8 @@ const validarFormulario = (event) => {
     const apellido = document.querySelector("#apellido");
     const email = document.querySelector("#email");
     const contraseña = document.querySelector("#password");
+    const pais = document.querySelector("#pais");
+    const nacimiento = document.querySelector("#fechaNacimiento");
 
     let validation = true;
     if(!nombre.value.trim()){
@@ -58,6 +64,22 @@ const validarFormulario = (event) => {
             contraseña.classList.add('error')
             validation=false;} 
     }
+ 
+    if(pais.value === ''){
+        pais.classList.add('error')
+        document.querySelector("#error-Pais").textContent='Debe seleccionar un pais';
+        validation=false;
+    }
+
+    if(nacimiento.value === ''){
+        nacimiento.classList.add('error')
+        document.querySelector("#error-FechaNacimiento").textContent='Debe seleccionar una Fecha de Nacimiento';
+        validation=false;
+    }
+
+
+
+
     if(validation){
         formRegister.submit()
         alert("Felicitaciones, te has registrado correctamente¡¡¡")

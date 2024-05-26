@@ -38,11 +38,12 @@
                 <input type="password" placeholder="Contraseña" required id="password" name="password">
             </div>
             <div class="error" id="error-Contraseña"></div>
-            <div>
+            <div class="form-control">
                 <input type="date" placeholder="Fecha de Nacimiento (dd/mm/aaaa)" required id="fechaNacimiento" name="fechaNacimiento">
             </div>
+            <div class="error" id="error-FechaNacimiento"></div>
             <div>
-                <select name="pais" id="pais">
+                <select class="form-select" name="pais" id="pais">
                     <option value="">País</option>
                     <option value="AR">Argentina</option>
                     <option value="BO">Bolivia</option>
@@ -56,6 +57,7 @@
                     <option value="VE">Venezuela</option>
                 </select>
             </div>
+            <div class="error" id="error-Pais"></div>
             <div class="terminos" >
                 <input class="check" type="checkbox" id="terminos">
                 <label class="textoCheck" for="terminos">Acepto términos y condiciones</label>
